@@ -37,5 +37,37 @@ function simea_gutenberg_ui_css() {
 add_filter('elementor/frontend/print_google_fonts', '__return_false'); 
 
 /**
+ * Frontend and admin scripts
+ *
+ * Uncomment the hook to activate the respective script.
+ */
+
+// Frontend script
+function morntag_enqueue_frontend_scripts() {
+    wp_enqueue_script(
+        'morntag-frontend-script',
+        get_stylesheet_directory_uri() . '/assets/js/frontend.js',
+        array(), 
+        '1.0.0',
+        true 
+    );
+}
+
+// add_action('wp_enqueue_scripts', 'morntag_enqueue_frontend_scripts');
+
+// Admin script
+function morntag_enqueue_admin_scripts() {
+    wp_enqueue_script(
+        'morntag-admin-script',
+        get_stylesheet_directory_uri() . '/assets/js/admin.js',
+        array(), 
+        '1.0.0',
+        true 
+    );
+}
+
+// add_action('admin_enqueue_scripts', 'morntag_enqueue_admin_scripts');
+
+/**
  * Your code goes below
  */
