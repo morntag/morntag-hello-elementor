@@ -1,0 +1,79 @@
+/* THIS FILE CONTAINS THE CSS FOR GUTENBERG EDITOR */
+
+/* Start Custom Fonts CSS */
+@font-face {
+  font-family: 'Abril Fatface';
+  font-style: normal;
+  font-weight: normal;
+  font-display: auto;
+  src: url('http://morntag-child-theme-development.local/wp-content/uploads/2022/02/AbrilFatface-Regular.eot');
+  src: url('http://morntag-child-theme-development.local/wp-content/uploads/2022/02/AbrilFatface-Regular.eot?#iefix') format('embedded-opentype'),
+    url('http://morntag-child-theme-development.local/wp-content/uploads/2022/02/AbrilFatface-Regular.woff2') format('woff2'),
+    url('http://morntag-child-theme-development.local/wp-content/uploads/2022/02/AbrilFatface-Regular.woff') format('woff'),
+    url('http://morntag-child-theme-development.local/wp-content/uploads/2022/02/AbrilFatface-Regular.ttf') format('truetype'),
+    url('http://morntag-child-theme-development.local/wp-content/uploads/2022/02/AbrilFatface-Regular.svg#AbrilFatface') format('svg');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: normal;
+  font-display: auto;
+  src: url('http://morntag-child-theme-development.local/wp-content/uploads/2022/02/OpenSans-VariableFont_wdthwght.eot');
+  src: url('http://morntag-child-theme-development.local/wp-content/uploads/2022/02/OpenSans-VariableFont_wdthwght.eot?#iefix') format('embedded-opentype'),
+    url('http://morntag-child-theme-development.local/wp-content/uploads/2022/02/OpenSans-VariableFont_wdthwght.woff2') format('woff2'),
+    url('http://morntag-child-theme-development.local/wp-content/uploads/2022/02/OpenSans-Regular.woff') format('woff'),
+    url('http://morntag-child-theme-development.local/wp-content/uploads/2022/02/OpenSans-Regular.ttf') format('truetype'),
+    url('http://morntag-child-theme-development.local/wp-content/uploads/2022/02/OpenSans-Regular.svg#OpenSans') format('svg');
+}
+
+/* End Custom Fonts CSS */
+
+/* Elementor Global Styles hierhin kopieren */
+body {
+  --e-global-color-primary: #3686A8;
+  --e-global-color-secondary: #000000;
+  --e-global-color-text: #545454;
+  --e-global-color-accent: #BF0C4D;
+  --e-global-typography-primary-font-family: "Abril Fatface";
+  --e-global-typography-primary-font-weight: normal;
+  --e-global-typography-secondary-font-family: "Abril Fatface";
+  --e-global-typography-secondary-font-weight: normal;
+  --e-global-typography-text-font-family: "Open Sans";
+  --e-global-typography-text-font-size: 14px;
+  --e-global-typography-accent-font-family: "Open Sans";
+  --e-global-typography-accent-font-weight: bold;
+}
+
+/* Stil-Vorgaben (ab hier normalerweise nichts verändern) */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--e-global-typography-primary-font-family);
+  font-weight: var(--e-global-typography-primary-font-weight);
+}
+
+p,
+li,
+td,
+th {
+  font-family: var(--e-global-typography-text-font-family);
+  font-size: var(--wp--preset--font-size--small);
+}
+
+th {
+  font-weight: var(--e-global-typography-accent-font-weight);
+}
+
+b,
+strong {
+  font-weight: var(--e-global-typography-accent-font-weight);
+}
+
+.wp-block-button__link {
+  font-family: var(--e-global-typography-accent-font-family);
+  font-weight: var(--e-global-typography-accent-font-weight);
+}

@@ -1,0 +1,9 @@
+/*
+Theme Name:     morntag – Child Hello Elementor
+Template:       hello-elementor
+
+This is the child theme for Hello Elementor theme.
+
+Right to Left text support.
+*/
+@import url("../twentyseventeen/rtl.css");

@@ -1,0 +1,99 @@
+{
+	"$schema": "https://raw.githubusercontent.com/WordPress/gutenberg/trunk/schemas/json/theme.json",
+	"version": 2,
+	"customTemplates": [],
+	"settings": {
+		"appearanceTools": true,
+		"color": {
+			"duotone": [
+				{
+					"colors": [
+						"#000000",
+						"#ffffff"
+					],
+					"slug": "foreground-and-background",
+					"name": "Foreground and background"
+				}
+			],
+			"gradients": [],
+			"defaultPalette": false,
+			"custom": false,
+			"palette": [
+				{
+					"slug": "black",
+					"color": "#000000",
+					"name": "Schwarz"
+				},
+				{
+					"slug": "white",
+					"color": "#ffffff",
+					"name": "Weiss"
+				},
+				{
+					"slug": "accent",
+					"color": "#7ddbb1",
+					"name": "Accent"
+				}
+			]
+		},
+		"spacing": {
+			"units": ["%", "px", "em", "rem", "vh",	"vw"]
+		},
+		"typography": {
+			"dropCap": false,
+			"customFontSize": false,
+			"lineHeight": false,
+			"letterSpacing": false,
+			"fontSizes": [
+				{
+					"size": "1rem",
+					"slug": "very-small"
+				},
+				{
+					"size": "1.25rem",
+					"slug": "small"
+				},
+				{
+					"size": "1.5rem",
+					"slug": "medium"
+				},
+				{
+					"size": "2rem",
+					"slug": "large"
+				},
+				{
+					"size": "2.5rem",
+					"slug": "very-large"
+				}
+			]
+		},
+		"layout": {
+			"contentSize": "650px",
+			"wideSize": "1000px"
+		}
+	},
+	"styles": {
+		"blocks": {
+			"core/button": {
+				"color": {
+					"background": "var(--wp--preset--color--black)",
+					"link": "var(--wp--preset--color--white)"
+				},
+				"border": {
+					"style": "solid",
+					"width": "4px",
+					"radius": "5px",
+					"color": "var(--wp--preset--color--accent)"
+				}
+			}
+		},
+		"color": {
+			"background": "var(--wp--preset--color--white)",
+			"text": "var(--wp--preset--color--black)"
+		},
+		"elements": {},
+		"spacing": {
+			"blockGap": "1.5rem"
+		}
+	}
+}
