@@ -5,6 +5,16 @@
  * (Please see https://developer.wordpress.org/themes/advanced-topics/child-themes/#how-to-create-a-child-theme)
  */
 
+ // Dequeue Google Fonts loaded by Elementor.
+add_filter('elementor/frontend/print_google_fonts', '__return_false'); 
+
+/**
+ * Stylesheets
+ *
+ * Parent and child theme stylesheet as well as a stylesheet 
+ * for the gutenberg editor.
+ */
+
 // Parent stylesheet and custom frontent stylesheet.
 add_action('wp_enqueue_scripts', 'morntag_child_hello_elementor_enqueue_styles');
 
@@ -17,24 +27,15 @@ function morntag_child_hello_elementor_enqueue_styles() {
     );
 }
 
+// Editor stylesheet (backend).
+add_action('enqueue_block_editor_assets', 'morntag_editor_style');
 
- // Stylesheet Gutenberg Editor
-add_action('after_setup_theme', 'add_gutenberg_css');
-
-function add_gutenberg_css() {
-    add_theme_support('editor-styles');
-    add_editor_style('/assets/css/style-editor.css');
+function morntag_editor_style() {
+  wp_enqueue_style(
+    'morntag-editor-style',
+    get_stylesheet_directory_uri() . '/assets/css/editor-style.css');
 }
 
-// Enqueues editor UI styles.
-// add_action('enqueue_block_editor_assets', 'simea_gutenberg_ui_css');
-
-function simea_gutenberg_ui_css() {
-    wp_enqueue_style('style-editor.css', get_theme_file_uri('style-editor.css'));
-}
-
- // Dequeue Google Fonts loaded by Elementor.
-add_filter('elementor/frontend/print_google_fonts', '__return_false'); 
 
 /**
  * Frontend and admin scripts

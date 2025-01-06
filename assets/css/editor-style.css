@@ -35,13 +35,13 @@ body {
   --e-global-color-secondary: #000000;
   --e-global-color-text: #545454;
   --e-global-color-accent: #BF0C4D;
-  --e-global-typography-primary-font-family: "Abril Fatface";
+  --e-global-typography-primary-font-family: "Abril Fatface", serif;
   --e-global-typography-primary-font-weight: normal;
-  --e-global-typography-secondary-font-family: "Abril Fatface";
+  --e-global-typography-secondary-font-family: "Abril Fatface", serif;
   --e-global-typography-secondary-font-weight: normal;
-  --e-global-typography-text-font-family: "Open Sans";
+  --e-global-typography-text-font-family: "Open Sans", sans-serif;
   --e-global-typography-text-font-size: 14px;
-  --e-global-typography-accent-font-family: "Open Sans";
+  --e-global-typography-accent-font-family: "Open Sans", sans-serif;
   --e-global-typography-accent-font-weight: bold;
 }
 
