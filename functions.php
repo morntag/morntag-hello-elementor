@@ -5,9 +5,6 @@
  * (Please see https://developer.wordpress.org/themes/advanced-topics/child-themes/#how-to-create-a-child-theme)
  */
 
- // Dequeue Google Fonts loaded by Elementor.
-add_filter('elementor/frontend/print_google_fonts', '__return_false'); 
-
 /**
  * Stylesheets
  *
