@@ -7,7 +7,7 @@ This is a custom child theme based on the Elementor Hello theme, designed for [b
 1.  **Clone the repository:**
 
     ```bash
-    git clone [repository URL]
+    git clone https://github.com/morntag/morntag-hello-elementor.git
     cd [repository directory]
     ```
 

@@ -1,88 +1,48 @@
 <?php
+/*
+|--------------------------------------------------------------------------
+| MORNTAG CHILD THEME
+|--------------------------------------------------------------------------
+|
+| This is a childtheme based on the hello-elementor theme.
+|
+*/
+
+/*
+|--------------------------------------------------------------------------
+| Automatically include PHP files from the /includes directory
+|--------------------------------------------------------------------------
+|
+| This function scans the /includes directory within the theme's root
+| and requires all .php files found.
+|
+*/
+$includes_dir = get_stylesheet_directory() . '/includes/';
+
+if ( is_dir( $includes_dir ) ) {
+	$files = glob( $includes_dir . '*.php' );
+
+	if ( ! empty( $files ) ) {
+		foreach ( $files as $file ) {
+			require_once $file;
+		}
+	}
+}
+
+/*
+|--------------------------------------------------------------------------
+| Your code goes below:
+|--------------------------------------------------------------------------
+*/
+
 /**
- * This is the child theme for Hello Elementor theme.
+ * This is an example comment
  *
- * (Please see https://developer.wordpress.org/themes/advanced-topics/child-themes/#how-to-create-a-child-theme)
- */
-
-/**
- * Stylesheets
+ * Please use this style of comments throughout this file and all includes.
+ * Your colleagues, your future self and any developer ever reading your code
+ * will be grateful.
  *
- * Parent and child theme stylesheet as well as a stylesheet
- * for the gutenberg editor.
- */
-
-// Parent stylesheet and custom frontent stylesheet.
-add_action( 'wp_enqueue_scripts', 'morntag_child_hello_elementor_enqueue_styles' );
-
-function morntag_child_hello_elementor_enqueue_styles() {
-	$parent_style_uri = get_template_directory_uri() . '/style.css';
-	$parent_style_dir = get_template_directory() . '/style.css';
-	$child_style_uri  = get_stylesheet_directory_uri() . '/style.css';
-	$child_style_dir  = get_stylesheet_directory() . '/style.css';
-
-	wp_enqueue_style(
-		'parent-style',
-		$parent_style_uri,
-		array(),
-		filemtime( $parent_style_dir )
-	);
-
-	wp_enqueue_style(
-		'child-style',
-		$child_style_uri,
-		array( 'parent-style' ),
-		filemtime( $child_style_dir )
-	);
-}
-
-// Editor stylesheet (backend).
-add_action( 'enqueue_block_editor_assets', 'morntag_editor_style' );
-
-function morntag_editor_style() {
-	$editor_style_uri = get_stylesheet_directory_uri() . '/assets/css/editor-style.css';
-	$editor_style_dir = get_stylesheet_directory() . '/assets/css/editor-style.css';
-	wp_enqueue_style(
-		'morntag-editor-style',
-		$editor_style_uri,
-		array(),
-		filemtime( $editor_style_dir )
-	);
-}
-
-
-/**
- * Frontend and admin scripts
+ * And remember, be kind!
  *
- * Uncomment the hook to activate the respective script.
- */
-
-/** Frontend script */
-function morntag_enqueue_frontend_scripts() {
-	wp_enqueue_script(
-		'morntag-frontend-script',
-		get_stylesheet_directory_uri() . '/assets/js/frontend.js',
-		array(),
-		'1.0.0',
-		true
-	);
-}
-
-// add_action('wp_enqueue_scripts', 'morntag_enqueue_frontend_scripts');
-
-/** Admin script */
-function morntag_enqueue_admin_scripts() {
-	wp_enqueue_script(
-		'morntag-admin-script',
-		get_stylesheet_directory_uri() . '/assets/js/admin.js',
-		array(),
-		'1.0.0',
-		true
-	);
-}
-
-// add_action('admin_enqueue_scripts', 'morntag_enqueue_admin_scripts');
-
-/**
- * Your code goes below
+ * @author: Brian Boy <brian@morntag.com>
  */
