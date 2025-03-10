@@ -1,0 +1,51 @@
+name: Release Theme
+on:
+  push:
+    branches: [main]
+  pull_request:
+    types: [closed]
+    branches: [main]
+    paths:
+      - "**"
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Get version
+        id: get_version
+        run: |
+          VERSION=$(grep -Po "(?<=Version: ).*" style.css)
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+
+      - name: Create ZIP file
+        run: |
+          if [ -f ".distignore" ]; then
+            zip -r morntag-hello-elementor-v${{ env.VERSION }}.zip . -x@.distignore
+          else
+            zip -r morntag-hello-elementor-v${{ env.VERSION }}.zip . -x ".git/*" ".github/*" "tests/*" "composer.json" "composer.lock"
+          fi
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v${{ env.VERSION }}
+          release_name: v${{ env.VERSION }}
+          draft: false
+          prerelease: false
+
+      - name: Upload Release Asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./morntag-hello-elementor-v${{ env.VERSION }}.zip
+          asset_name: morntag-hello-elementor-v${{ env.VERSION }}.zip
+          asset_content_type: application/zip
