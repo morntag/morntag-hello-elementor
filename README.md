@@ -1,6 +1,6 @@
 # Morntag Hello Elementor Child Theme
 
-This is a custom child theme based on the Elementor Hello theme, designed for [briefly describe the purpose of the theme].
+This is a custom child theme based on the Elementor Hello theme, designed for.
 
 ## Setup
 
