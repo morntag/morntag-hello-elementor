@@ -2,11 +2,15 @@
 Theme Name: morntag – Child Hello Elementor
 Author: morntag
 Description: A child theme for Hello Elementor, with some superpowers added by morntag.
-Version: 1.5.7
+Version: 1.5.8
 Template: hello-elementor
 
 This is the child theme for Hello Elementor theme.
 */
+
+/* ==========================================================================
+   Default styles
+   ========================================================================== */
 
 /* Remove underline from buttons */
 .wp-block-button .wp-block-button__link {
@@ -19,3 +23,7 @@ This is the child theme for Hello Elementor theme.
   outline: 2px solid var(--e-global-color-primary);
   outline-offset: 2px;
 }
+
+/* ==========================================================================
+   Custom styles (Begin every section with a comment like this).
+   ========================================================================== */

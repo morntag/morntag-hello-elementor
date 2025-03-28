@@ -1,4 +1,10 @@
-/* THIS FILE CONTAINS THE CSS FOR GUTENBERG EDITOR */
+/* ==========================================================================
+    THIS FILE CONTAINS THE CSS FOR GUTENBERG EDITOR  
+   ========================================================================== */
+
+/* ==========================================================================
+   Fonts
+   ========================================================================== */
 
 /* Start Custom Fonts CSS */
 @font-face {
@@ -27,7 +33,10 @@
     url('http://morntag-child-theme-development.local/wp-content/uploads/2022/02/OpenSans-Regular.svg#OpenSans') format('svg');
 }
 
-/* End Custom Fonts CSS */
+
+/* ==========================================================================
+   Global styles
+   ========================================================================== */
 
 /* Elementor Global Styles hierhin kopieren */
 body {
