@@ -21,7 +21,7 @@ add_filter( 'hello_elementor_skip_link_url', 'morntag_custom_skip_link_url' );
  */
 function morntag_add_id_to_first_top_level_element( $html_content ) {
 
-	$skip_content_id = 'mcc-content';
+	$skip_content_id = 'content';
 
 	// Static variable to ensure the ID is added only once per page load,
 	// even if this function is called multiple times for different content blocks.
@@ -40,7 +40,7 @@ function morntag_add_id_to_first_top_level_element( $html_content ) {
 		return $html_content;
 	}
 
-	// Check if the target ID 'mcc-content' (wrapped in id="mcc-content" to be more specific)
+	// Check if the target ID 'content' (wrapped in id="content" to be more specific)
 	// already exists in the HTML content. If so, mark that we found it and return.
 	// This prevents adding duplicate IDs.
 	if ( str_contains( $html_content, 'id="' . $skip_content_id . '"' ) ) {
@@ -60,7 +60,7 @@ function morntag_add_id_to_first_top_level_element( $html_content ) {
 			continue;
 		}
 
-		// If the data attribute is found, use preg_replace to add ' id="mcc-content"'
+		// If the data attribute is found, use preg_replace to add ' id="content"'
 		// immediately after the found attribute string.
 		// preg_quote is used to escape any special regex characters in $type_html_string.
 		// The '1' at the end limits the replacement to only the first occurrence.
@@ -87,5 +87,5 @@ function morntag_add_id_to_first_top_level_element( $html_content ) {
  */
 function morntag_custom_skip_link_url( $url ) {
 	// The new skip content link
-	return '#mcc-content';
+	return '#content';
 }
