@@ -79,6 +79,7 @@ function morntag_enqueue_frontend_scripts() {
 /** Admin script */
 // add_action('admin_enqueue_scripts', 'morntag_enqueue_admin_scripts');
 
+
 function morntag_enqueue_admin_scripts() {
 	wp_enqueue_script(
 		'morntag-admin-script',
