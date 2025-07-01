@@ -71,7 +71,7 @@ function morntag_enqueue_frontend_scripts() {
 		'morntag-frontend-script',
 		get_stylesheet_directory_uri() . '/assets/js/frontend.js',
 		array(),
-		'1.0.0',
+		get_stylesheet_directory() . '/assets/js/frontend.js',
 		true
 	);
 }
@@ -85,7 +85,7 @@ function morntag_enqueue_admin_scripts() {
 		'morntag-admin-script',
 		get_stylesheet_directory_uri() . '/assets/js/admin.js',
 		array(),
-		'1.0.0',
+		get_stylesheet_directory() . '/assets/js/admin.js',
 		true
 	);
 }
