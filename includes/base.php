@@ -64,6 +64,8 @@ function morntag_editor_style() {
 */
 
 /** Frontend script */
+// add_action('wp_enqueue_scripts', 'morntag_enqueue_frontend_scripts');
+
 function morntag_enqueue_frontend_scripts() {
 	wp_enqueue_script(
 		'morntag-frontend-script',
@@ -74,9 +76,9 @@ function morntag_enqueue_frontend_scripts() {
 	);
 }
 
-// add_action('wp_enqueue_scripts', 'morntag_enqueue_frontend_scripts');
-
 /** Admin script */
+// add_action('admin_enqueue_scripts', 'morntag_enqueue_admin_scripts');
+
 function morntag_enqueue_admin_scripts() {
 	wp_enqueue_script(
 		'morntag-admin-script',
@@ -86,8 +88,6 @@ function morntag_enqueue_admin_scripts() {
 		true
 	);
 }
-
-// add_action('admin_enqueue_scripts', 'morntag_enqueue_admin_scripts');
 
 /*
 |--------------------------------------------------------------------------
