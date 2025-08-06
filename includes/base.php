@@ -40,7 +40,7 @@ function morntag_child_hello_elementor_enqueue_styles() {
 }
 
 // Editor stylesheet (backend).
-add_action( 'enqueue_block_editor_assets', 'morntag_editor_style' );
+add_action( 'enqueue_block_assets', 'morntag_editor_style' );
 
 function morntag_editor_style() {
 	$editor_style_uri = get_stylesheet_directory_uri() . '/assets/css/editor-style.css';
