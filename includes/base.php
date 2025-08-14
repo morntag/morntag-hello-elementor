@@ -119,3 +119,23 @@ function morntag_remove_tinymce_emoji( $plugins ) {
 		array( 'wpemoji' )
 	);
 }
+
+/*
+|--------------------------------------------------------------------------
+| Disable Elementor AI site wide
+|--------------------------------------------------------------------------
+|
+| Elementor AI has to be manually disabled for each user. This filter takes
+| care of that automatically, with proper checks to ensure Elementor is
+| loaded and the required class properties exist.
+|
+*/
+add_action( 'plugins_loaded', 'morntag_disable_elementor_ai' );
+
+function morntag_disable_elementor_ai() {
+	if ( defined( 'ELEMENTOR_VERSION' ) && 
+		 class_exists( 'Elementor\Modules\Ai\Preferences' ) && 
+		 property_exists( 'Elementor\Modules\Ai\Preferences', 'ENABLE_AI' ) ) {
+		add_filter( 'get_user_option_' . Elementor\Modules\Ai\Preferences::ENABLE_AI, '__return_null' );
+	}
+}
