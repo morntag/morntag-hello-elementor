@@ -130,12 +130,4 @@ function morntag_remove_tinymce_emoji( $plugins ) {
 | loaded and the required class properties exist.
 |
 */
-add_action( 'plugins_loaded', 'morntag_disable_elementor_ai' );
-
-function morntag_disable_elementor_ai() {
-	if ( defined( 'ELEMENTOR_VERSION' ) && 
-		 class_exists( 'Elementor\Modules\Ai\Preferences' ) && 
-		 property_exists( 'Elementor\Modules\Ai\Preferences', 'ENABLE_AI' ) ) {
-		add_filter( 'get_user_option_' . Elementor\Modules\Ai\Preferences::ENABLE_AI, '__return_null' );
-	}
-}
+add_filter( 'get_user_option_elementor_enable_ai', '__return_null' );
