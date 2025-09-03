@@ -90,6 +90,20 @@ function morntag_enqueue_admin_scripts() {
 	);
 }
 
+/** Admin stylesheet */
+add_action( 'admin_enqueue_scripts', 'morntag_enqueue_admin_styles' );
+
+function morntag_enqueue_admin_styles() {
+	$admin_style_uri = get_stylesheet_directory_uri() . '/assets/css/admin-style.css';
+	$admin_style_dir = get_stylesheet_directory() . '/assets/css/admin-style.css';
+	wp_enqueue_style(
+		'morntag-admin-style',
+		$admin_style_uri,
+		array(),
+		filemtime( $admin_style_dir )
+	);
+}
+
 /*
 |--------------------------------------------------------------------------
 | Dequeue default wp emojis

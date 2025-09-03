@@ -24,9 +24,26 @@ jobs:
       - name: Create ZIP file
         run: |
           if [ -f ".distignore" ]; then
-            zip -r morntag-hello-elementor-v${{ env.VERSION }}.zip . -x@.distignore
+            # Process .distignore patterns to work with zip -x
+            EXCLUDE_ARGS=""
+            while IFS= read -r pattern || [[ -n "$pattern" ]]; do
+              # Skip empty lines and comments
+              if [[ -z "$pattern" || "$pattern" =~ ^[[:space:]]*# ]]; then
+                continue
+              fi
+              # Remove leading/trailing whitespace
+              pattern=$(echo "$pattern" | xargs)
+              # If pattern is a directory, add /* to exclude contents
+              if [[ -d "$pattern" ]]; then
+                EXCLUDE_ARGS="$EXCLUDE_ARGS \"$pattern\" \"$pattern/*\""
+              else
+                EXCLUDE_ARGS="$EXCLUDE_ARGS \"$pattern\""
+              fi
+            done < .distignore
+            # Create zip with processed exclusions
+            eval "zip -r morntag-hello-elementor-v${{ env.VERSION }}.zip . -x $EXCLUDE_ARGS"
           else
-            zip -r morntag-hello-elementor-v${{ env.VERSION }}.zip . -x ".git/*" ".github/*" "tests/*" "composer.json" "composer.lock"
+            zip -r morntag-hello-elementor-v${{ env.VERSION }}.zip .
           fi
 
       - name: Create Release

@@ -1,0 +1,20 @@
+/*
+|--------------------------------------------------------------------------
+| ADMIN STYLES
+|--------------------------------------------------------------------------
+|
+| Styles specifically for WordPress admin interface
+|
+*/
+
+/*
+|--------------------------------------------------------------------------
+| Hide Elementor AI status field in user profile
+|--------------------------------------------------------------------------
+*/
+
+/* Hide row containing Elementor AI checkbox and previous sibling row */
+tr:has(#elementor_enable_ai),
+tr:has(+ tr #elementor_enable_ai) {
+    display: none !important;
+}
