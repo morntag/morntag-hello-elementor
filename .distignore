@@ -1,5 +1,5 @@
-.git
-.github
+.git/*
+.github/*
 .gitignore
 .distignore
 .editorconfig
@@ -7,13 +7,13 @@
 biome.json
 composer.json
 composer.lock
-node_modules
+node_modules/*
 cghooks.lock
-scripts
+scripts/*
 
 phpcs.xml
 phpunit.xml
-tests
+tests/*
 
 README.md
 
