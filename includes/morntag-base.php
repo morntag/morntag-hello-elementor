@@ -43,6 +43,10 @@ function morntag_child_hello_elementor_enqueue_styles() {
 add_action( 'enqueue_block_assets', 'morntag_editor_style' );
 
 function morntag_editor_style() {
+	// Only enqueue in admin/editor context, not frontend.
+	if ( ! is_admin() ) {
+		return;
+	}
 	$editor_style_uri = get_stylesheet_directory_uri() . '/assets/css/editor-style.css';
 	$editor_style_dir = get_stylesheet_directory() . '/assets/css/editor-style.css';
 	wp_enqueue_style(
